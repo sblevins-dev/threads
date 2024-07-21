@@ -14,7 +14,7 @@ export default function Header() {
             className='w-auto h-full'
         />
         <span className='ml-2 font-bold text-2xl'>
-            Threads
+            Threaded
         </span>
       </div>
 

@@ -3,10 +3,12 @@ import images from "@/public/icons"
 const MainItems = [
     {
         label: "Home",
+        link: "/",
         icon: images.home
     },
     {
         label: "Popular",
+        link: "/popular",
         icon: images.popular
     }
 ]
