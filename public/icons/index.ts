@@ -11,6 +11,8 @@ import star from "./star.png"
 import tech from "./tech.png"
 import userAgree from "./userAgree.png"
 import help from "./help.png"
+import logo from "./logo.png"
+import mag from "./mag.png"
 
 const images = {
     home,
@@ -25,7 +27,9 @@ const images = {
     star,
     tech,
     userAgree,
-    help
+    help,
+    logo,
+    mag
 }
 
 export default images;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { inter } from "@/app/ui/fonts";
 import "./ui/globals.css";
 import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,14 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="flex flex-row h-screen">
+      <body className={`flex flex-col ${inter.className}`}>
+        <Header />
+        <div className="flex flex-row mt-14">
             <Sidebar />
           <div className="flex-grow p-6 md:overflow-y-auto md:p-12 ml-[300px]">
             {children}
           </div>
         </div>
-
       </body>
     </html>
   );
