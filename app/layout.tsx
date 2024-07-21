@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { inter } from "@/app/ui/fonts";
-import "./ui/globals.css";
+import { inter } from "@/components/ui/fonts";
+import "@/components/ui/globals.css";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
@@ -19,8 +19,8 @@ export default function RootLayout({
       <body className={`flex flex-col ${inter.className}`}>
         <Header />
         <div className="flex flex-row mt-14">
-            <Sidebar />
-          <div className="flex-grow p-6 md:overflow-y-auto md:p-12 ml-[300px]">
+          <Sidebar />
+          <div className="flex-grow p-4 md:overflow-y-auto ml-[250px]">
             {children}
           </div>
         </div>

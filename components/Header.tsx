@@ -6,7 +6,7 @@ import SearchBar from './ui/SearchBar'
 export default function Header() {
   return (
     <div 
-        className='fixed py-2 px-5 gap-20 mb-20 h-14 w-full z-10 border-b border-b-[#161616] flex items-center justify-between'>
+        className='fixed py-2 px-5 gap-20 mb-20 bg-black h-14 w-full z-10 border-b border-b-[#161616] flex items-center justify-between'>
       <div className='flex items-end h-full'>
         <Image 
             src={images.logo}

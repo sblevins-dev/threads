@@ -13,6 +13,9 @@ import userAgree from "./userAgree.png"
 import help from "./help.png"
 import logo from "./logo.png"
 import mag from "./mag.png"
+import comment from "./comment.png"
+import arrow from "./upArrow.png"
+import share from "./share.png"
 
 const images = {
     home,
@@ -29,7 +32,10 @@ const images = {
     userAgree,
     help,
     logo,
-    mag
+    mag,
+    comment,
+    arrow,
+    share
 }
 
 export default images;
