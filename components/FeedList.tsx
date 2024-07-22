@@ -3,15 +3,48 @@ import VoteBadge from './ui/VoteBadge'
 import CommentBadge from './ui/CommentBadge'
 import ShareBadge from './ui/ShareBadge'
 
-export default function FeedList({ feed }) {
+interface Posts {
+    id: number,
+    topic: string,
+    date: string,
+    title: string,
+    upvotes: number,
+    details: string,
+}
+
+interface FeedListProps {
+    feed: Posts[];
+}
+
+export default function FeedList({ feed }: { feed: FeedListProps["feed"] }) {
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        const options: Intl.DateTimeFormatOptions = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        }
+
+        return date.toLocaleString('en-US', options);
+    }
     return (
         <div className='flex-grow max-w-[800px]'>
 
             <hr className='w-full border-[#161616] mb-2' />
 
             <ul>
-                {feed.map((post: { id: React.Key | null | undefined, topic: string, upvotes: number, date: string, title: string, details: string }) => (
-                    <>
+                {feed.map((post: {
+                    id: number,
+                    topic: string,
+                    date: string,
+                    title: string,
+                    upvotes: number,
+                    details: string,
+                }) => (
+                    <React.Fragment key={post.id}>
                         <li key={post.id} className='p-2 hover:bg-gray-900 rounded-lg transition duration-200'>
 
                             {/* Post Content */}
@@ -21,7 +54,7 @@ export default function FeedList({ feed }) {
                                 </div>
 
                                 <span>
-                                    {post.topic}{" "}&bull;{" "}{post.date}
+                                    {post.topic}{" "}&bull;{" "}{formatDate(post.date)}
                                 </span>
                             </div>
 
@@ -43,7 +76,7 @@ export default function FeedList({ feed }) {
                         </li>
 
                         <hr className='w-full border-[#161616] m-2' />
-                    </>
+                    </React.Fragment>
                 ))}
             </ul>
 
